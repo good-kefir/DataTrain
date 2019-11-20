@@ -10,9 +10,15 @@ import Foundation
 
 public protocol IDataTrain{
     
-    func send(topic:String,
-              queue:String,
-              operation: @escaping (IContext)->())
+    
+    func sendNow(topic:String,
+                 queue:String,
+                 operation: @escaping (IContext)->())
+    
+    func sendDeadline(deadline: DispatchTime,
+                      topic:String,
+                      queue:String,
+                      operation: @escaping (IContext)->())
         
     
     func subscribe(topic:String,

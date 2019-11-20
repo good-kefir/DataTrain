@@ -15,6 +15,10 @@ public protocol ITopicItem{
     var context:IContext { get }
     var queue:DispatchQueue { get }
     
-    func send(operation:@escaping (IContext)->())
+    func sendNow(operation:@escaping (IContext)->())
+    
+    func sendDeadline(deadline: DispatchTime,
+                      operation:@escaping (IContext)->())
+    
     func add(subscription:ISubscribtion)
 }

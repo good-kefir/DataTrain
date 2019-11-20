@@ -19,15 +19,27 @@ public class DataTrain : IDataTrain{
         workQueue = DispatchQueue(label: "Broker")
     }
     
-    public func send(topic: String,
-               queue: String,
-               operation: @escaping (IContext) -> ()){
+    public func sendNow(topic: String,
+                        queue: String,
+                        operation: @escaping (IContext) -> ()){
             
             self.addThreadSaveOperation {
-                       let topic = self.createIfNeedTopic(nameTopic: topic)
-                        topic.send(queue: queue, operation: operation)
-                   }
+                    let topic = self.createIfNeedTopic(nameTopic: topic)
+                    topic.sendNow(queue: queue, operation: operation)
+            }
      }
+    
+    public func sendDeadline(deadline: DispatchTime,
+                             topic:String,
+                             queue:String,
+                             operation: @escaping (IContext)->()){
+        
+        self.addThreadSaveOperation {
+            let topic = self.createIfNeedTopic(nameTopic: topic)
+            topic.sendDeadline(deadline:deadline, queue: queue, operation: operation)
+        }
+        
+    }
      
      public func subscribe(topic: String,
                     queue: String,

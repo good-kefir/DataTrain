@@ -21,10 +21,20 @@ class ViewController: UIViewController {
             print(message)
         }
         
-        self.dataTrain.send(topic: "1", queue: "1") { (contex) in
-            print("1")
-            contex.commit(result:["1", "2"] as AnyObject)
+       // DispatchQueue.main.asyncAfter(deadline: .now() + 3)
+        
+        
+        self.dataTrain.sendNow(topic: "1", queue: "1") { (contex) in
+                       print("1")
+                       contex.commit(result:["1", "2"] as AnyObject)
+                   }
+        
+        self.dataTrain.sendDeadline(deadline: .now() + 3, topic: "1", queue: "1") { (context) in
+            
+            print("2")
+            context.commit(result:["1", "2"] as AnyObject)
         }
+        
     }
 
 

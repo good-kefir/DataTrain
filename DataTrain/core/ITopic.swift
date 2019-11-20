@@ -12,8 +12,12 @@ public protocol ITopic : AnyObject{
     
     var name:String { get }
     
-    func send(queue:String,
-              operation:@escaping (IContext)->())
+    func sendNow(queue:String,
+                 operation:@escaping (IContext)->())
+    
+    func sendDeadline(deadline: DispatchTime,
+                      queue:String,
+                      operation:@escaping (IContext)->())
     
     func addSubscription(queue:String,
                          main: @escaping (IMessage)->())

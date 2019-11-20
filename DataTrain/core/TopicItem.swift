@@ -27,8 +27,15 @@ class TopicItem : ITopicItem{
         self.queue = queue
     }
     
-    public func send(operation:@escaping (IContext)->()){
+    public func sendNow(operation:@escaping (IContext)->()){
         self.queue.async {
+            operation(self.context)
+        }
+    }
+    
+    func sendDeadline(deadline: DispatchTime,
+                      operation:@escaping (IContext)->()){
+        self.queue.asyncAfter(deadline: deadline) {
             operation(self.context)
         }
     }

@@ -18,11 +18,18 @@ class Topic : ITopic{
         self.items = [:]
     }
         
-    func send(queue:String,
-              operation:@escaping (IContext)->()){
+    func sendNow(queue:String,
+                 operation:@escaping (IContext)->()){
         
         let item = self.createItemIfNeed(name: queue)
-        item.send(operation: operation)
+        item.sendNow(operation: operation)
+    }
+    
+    func sendDeadline(deadline: DispatchTime,
+                      queue:String,
+                      operation:@escaping (IContext)->()){
+        let item = self.createItemIfNeed(name: queue)
+        item.sendDeadline(deadline:deadline, operation: operation)
     }
         
     func addSubscription(queue:String,
