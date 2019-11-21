@@ -11,14 +11,10 @@
 		FF85F83123859981005021CD /* DataTrainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F83023859981005021CD /* DataTrainTests.swift */; };
 		FF85F83323859981005021CD /* DataTrain.h in Headers */ = {isa = PBXBuildFile; fileRef = FF85F82523859981005021CD /* DataTrain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FF85F83D23859A41005021CD /* IMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F83C23859A41005021CD /* IMessage.swift */; };
-		FF85F83F23859A5E005021CD /* IContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F83E23859A5E005021CD /* IContext.swift */; };
 		FF85F84123859A7A005021CD /* IDataTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F84023859A7A005021CD /* IDataTrain.swift */; };
 		FF85F84423859ACD005021CD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F84323859ACD005021CD /* Message.swift */; };
 		FF85F84623859AF9005021CD /* ISubscribtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F84523859AF9005021CD /* ISubscribtion.swift */; };
 		FF85F84823859B1B005021CD /* Subscribtion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F84723859B1B005021CD /* Subscribtion.swift */; };
-		FF85F84A23859B54005021CD /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F84923859B54005021CD /* Context.swift */; };
-		FF85F84C23859B75005021CD /* ITopicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F84B23859B75005021CD /* ITopicItem.swift */; };
-		FF85F84E23859B98005021CD /* TopicItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F84D23859B98005021CD /* TopicItem.swift */; };
 		FF85F85023859BCE005021CD /* ITopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F84F23859BCE005021CD /* ITopic.swift */; };
 		FF85F85223859BE8005021CD /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F85123859BE8005021CD /* Topic.swift */; };
 		FF85F85423859E27005021CD /* DataTrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F85323859E27005021CD /* DataTrain.swift */; };
@@ -28,8 +24,8 @@
 		FF85F87B2385A288005021CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF85F8792385A288005021CD /* Main.storyboard */; };
 		FF85F87D2385A28B005021CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF85F87C2385A28B005021CD /* Assets.xcassets */; };
 		FF85F8802385A28B005021CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF85F87E2385A28B005021CD /* LaunchScreen.storyboard */; };
-		FF85F8862385C4B6005021CD /* IOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F8852385C4B6005021CD /* IOperation.swift */; };
-		FF85F8882385C4C0005021CD /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F8872385C4C0005021CD /* Operation.swift */; };
+		FF85F88A2385D3BA005021CD /* IOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F8892385D3BA005021CD /* IOperationQueue.swift */; };
+		FF85F88C2385D3C5005021CD /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F88B2385D3C5005021CD /* OperationQueue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,14 +46,10 @@
 		FF85F83023859981005021CD /* DataTrainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTrainTests.swift; sourceTree = "<group>"; };
 		FF85F83223859981005021CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF85F83C23859A41005021CD /* IMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMessage.swift; sourceTree = "<group>"; };
-		FF85F83E23859A5E005021CD /* IContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IContext.swift; sourceTree = "<group>"; };
 		FF85F84023859A7A005021CD /* IDataTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDataTrain.swift; sourceTree = "<group>"; };
 		FF85F84323859ACD005021CD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		FF85F84523859AF9005021CD /* ISubscribtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISubscribtion.swift; sourceTree = "<group>"; };
 		FF85F84723859B1B005021CD /* Subscribtion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribtion.swift; sourceTree = "<group>"; };
-		FF85F84923859B54005021CD /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
-		FF85F84B23859B75005021CD /* ITopicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITopicItem.swift; sourceTree = "<group>"; };
-		FF85F84D23859B98005021CD /* TopicItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicItem.swift; sourceTree = "<group>"; };
 		FF85F84F23859BCE005021CD /* ITopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITopic.swift; sourceTree = "<group>"; };
 		FF85F85123859BE8005021CD /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		FF85F85323859E27005021CD /* DataTrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTrain.swift; sourceTree = "<group>"; };
@@ -69,8 +61,8 @@
 		FF85F87C2385A28B005021CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF85F87F2385A28B005021CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF85F8812385A28B005021CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF85F8852385C4B6005021CD /* IOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOperation.swift; sourceTree = "<group>"; };
-		FF85F8872385C4C0005021CD /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		FF85F8892385D3BA005021CD /* IOperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOperationQueue.swift; sourceTree = "<group>"; };
+		FF85F88B2385D3C5005021CD /* OperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +118,6 @@
 				FF85F82523859981005021CD /* DataTrain.h */,
 				FF85F82623859981005021CD /* Info.plist */,
 				FF85F83C23859A41005021CD /* IMessage.swift */,
-				FF85F83E23859A5E005021CD /* IContext.swift */,
 				FF85F84023859A7A005021CD /* IDataTrain.swift */,
 			);
 			path = DataTrain;
@@ -147,14 +138,11 @@
 				FF85F84323859ACD005021CD /* Message.swift */,
 				FF85F84523859AF9005021CD /* ISubscribtion.swift */,
 				FF85F84723859B1B005021CD /* Subscribtion.swift */,
-				FF85F84923859B54005021CD /* Context.swift */,
-				FF85F84B23859B75005021CD /* ITopicItem.swift */,
-				FF85F84D23859B98005021CD /* TopicItem.swift */,
 				FF85F84F23859BCE005021CD /* ITopic.swift */,
 				FF85F85123859BE8005021CD /* Topic.swift */,
 				FF85F85323859E27005021CD /* DataTrain.swift */,
-				FF85F8852385C4B6005021CD /* IOperation.swift */,
-				FF85F8872385C4C0005021CD /* Operation.swift */,
+				FF85F8892385D3BA005021CD /* IOperationQueue.swift */,
+				FF85F88B2385D3C5005021CD /* OperationQueue.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -315,19 +303,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF85F84623859AF9005021CD /* ISubscribtion.swift in Sources */,
-				FF85F8882385C4C0005021CD /* Operation.swift in Sources */,
 				FF85F85023859BCE005021CD /* ITopic.swift in Sources */,
 				FF85F85223859BE8005021CD /* Topic.swift in Sources */,
+				FF85F88A2385D3BA005021CD /* IOperationQueue.swift in Sources */,
+				FF85F88C2385D3C5005021CD /* OperationQueue.swift in Sources */,
 				FF85F83D23859A41005021CD /* IMessage.swift in Sources */,
-				FF85F84C23859B75005021CD /* ITopicItem.swift in Sources */,
 				FF85F84823859B1B005021CD /* Subscribtion.swift in Sources */,
-				FF85F84A23859B54005021CD /* Context.swift in Sources */,
-				FF85F84E23859B98005021CD /* TopicItem.swift in Sources */,
 				FF85F84423859ACD005021CD /* Message.swift in Sources */,
 				FF85F84123859A7A005021CD /* IDataTrain.swift in Sources */,
 				FF85F85423859E27005021CD /* DataTrain.swift in Sources */,
-				FF85F83F23859A5E005021CD /* IContext.swift in Sources */,
-				FF85F8862385C4B6005021CD /* IOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

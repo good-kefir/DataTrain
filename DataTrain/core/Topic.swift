@@ -11,43 +11,31 @@ import Foundation
 class Topic : ITopic{
     
     var name: String
-    var items:[String:ITopicItem]
+    var queues:[String:IOperationQueue]
+    private var lock:NSRecursiveLock
     
     required init(name:String){
         self.name = name
-        self.items = [:]
-    }
-        
-    func sendNow(queue:String,
-                 operation:@escaping (IContext)->()){
-        
-        let item = self.createItemIfNeed(name: queue)
-        item.sendNow(operation: operation)
+        self.queues = [:]
+        lock = NSRecursiveLock()
     }
     
-    func sendDeadline(deadline: DispatchTime,
-                      queue:String,
-                      operation:@escaping (IContext)->()){
-        let item = self.createItemIfNeed(name: queue)
-        item.sendDeadline(deadline:deadline, operation: operation)
+    func connect(queue:String) -> IOperationQueue{
+        self.lock.lock()
+        let queue = self.createQueueIfNeed(name: queue)
+        self.lock.unlock()
+        return queue
     }
         
-    func addSubscription(queue:String,
-                         main: @escaping (IMessage)->()){
         
-        let item = self.createItemIfNeed(name: queue)
-        let subscribtion:ISubscribtion = Subscribtion(name: queue, main: main)
-        item.add(subscription: subscribtion)
+    private func createQueueIfNeed(name:String) -> IOperationQueue{
         
-    }
-    
-    private func createItemIfNeed(name:String) -> ITopicItem{
-        
-        var item:ITopicItem? = self.items[name]
-        if item == nil{
-            item = TopicItem(name: name, queue: DispatchQueue(label: name))
-            self.items[name] = item
+        var queue:IOperationQueue? = self.queues[name]
+        if queue == nil{
+            
+            queue = OperationQueue(name: name, queue: DispatchQueue(label: name))
+            self.queues[name] = queue
         }
-        return item!
+        return queue!
     }
 }

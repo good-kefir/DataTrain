@@ -11,14 +11,5 @@ import Foundation
 public protocol ITopic : AnyObject{
     
     var name:String { get }
-    
-    func sendNow(queue:String,
-                 operation:@escaping (IContext)->())
-    
-    func sendDeadline(deadline: DispatchTime,
-                      queue:String,
-                      operation:@escaping (IContext)->())
-    
-    func addSubscription(queue:String,
-                         main: @escaping (IMessage)->())
+    func connect(queue:String) -> IOperationQueue
 }
