@@ -57,9 +57,53 @@ class OperationQueue : IOperationQueue, IContextDelegate{
         return self
     }
     
+    func subscribe<T:AnyObject>(id:T,
+                                main: @escaping (IMessage)->()) -> IOperationQueue{
+        self.queue.async {
+            
+            let subscribtionName = String(describing:id.self)
+            let subscribtion:ISubscribtion = Subscribtion(name: subscribtionName, main: main)
+            self.subscribtions.append(subscribtion)
+        }
+        return self
+    }
+    
+    @discardableResult
+    func unsubscribe<T:AnyObject>(id:T) -> IOperationQueue{
+        self.queue.async {
+            self.removeSubscribe(id: id)
+        }
+        return self
+    }
+    
+    @discardableResult
+    func unsubscribeDeadline<T:AnyObject>(id:T, deadline: DispatchTime) -> IOperationQueue{
+        
+        self.queue.asyncAfter(deadline: deadline) {
+            self.removeSubscribe(id: id)
+        }
+        return self
+    }
+    
     //MARK: IContextDelegate
     func didFinishOperation(data: AnyObject!) {
         self.notifySubscribtions(data: data)
+    }
+    
+    private func removeSubscribe<T:AnyObject>(id:T){
+        
+        let subscribtionName = String(describing:id.self)
+        let indexNotFount = -1
+        var removeIndex:Int = indexNotFount
+        for (index, subscribtion) in self.subscribtions.enumerated(){
+            
+            if subscribtion.name == subscribtionName{
+                removeIndex = index
+            }
+        }
+        if removeIndex != indexNotFount{
+            self.subscribtions.remove(at: removeIndex)
+        }
     }
     
     private func notifySubscribtions(data:AnyObject?){

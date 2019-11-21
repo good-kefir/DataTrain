@@ -22,5 +22,13 @@ public protocol IOperationQueue{
                       operation:@escaping (IContext)->()) -> IOperationQueue
     
     @discardableResult
-    func subscribe(main: @escaping (IMessage)->()) -> IOperationQueue
+    func subscribe<T:AnyObject>(id:T,
+                                main: @escaping (IMessage)->()) -> IOperationQueue
+    
+    @discardableResult
+    func unsubscribe<T:AnyObject>(id:T) -> IOperationQueue
+    
+    @discardableResult
+    func unsubscribeDeadline<T:AnyObject>(id:T,
+                                          deadline: DispatchTime) -> IOperationQueue
 }

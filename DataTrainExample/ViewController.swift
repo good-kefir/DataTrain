@@ -19,13 +19,13 @@ class ViewController: UIViewController {
         
         self.dataTrain.connect(name: "topic").connect(queue: "queue").sendNow { (context) in
             print("123")
-            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 context.commit(data: ["1", "2"] as AnyObject)
             }
             
-        }.subscribe { (message) in
+        }.subscribe(id: self) { (message) in
             print(message)
-        }
+        }.unsubscribeDeadline(id: self, deadline: .now() + 1)
         
     }
 }
