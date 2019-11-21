@@ -26,6 +26,8 @@
 		FF85F8802385A28B005021CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF85F87E2385A28B005021CD /* LaunchScreen.storyboard */; };
 		FF85F88A2385D3BA005021CD /* IOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F8892385D3BA005021CD /* IOperationQueue.swift */; };
 		FF85F88C2385D3C5005021CD /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F88B2385D3C5005021CD /* OperationQueue.swift */; };
+		FFA3AC9C2386F272007C5141 /* IContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3AC9B2386F272007C5141 /* IContext.swift */; };
+		FFA3AC9E2386F27E007C5141 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3AC9D2386F27E007C5141 /* Context.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		FF85F8812385A28B005021CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF85F8892385D3BA005021CD /* IOperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOperationQueue.swift; sourceTree = "<group>"; };
 		FF85F88B2385D3C5005021CD /* OperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
+		FFA3AC9B2386F272007C5141 /* IContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IContext.swift; sourceTree = "<group>"; };
+		FFA3AC9D2386F27E007C5141 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 				FF85F85323859E27005021CD /* DataTrain.swift */,
 				FF85F8892385D3BA005021CD /* IOperationQueue.swift */,
 				FF85F88B2385D3C5005021CD /* OperationQueue.swift */,
+				FFA3AC9B2386F272007C5141 /* IContext.swift */,
+				FFA3AC9D2386F27E007C5141 /* Context.swift */,
 			);
 			path = core;
 			sourceTree = "<group>";
@@ -311,7 +317,9 @@
 				FF85F84823859B1B005021CD /* Subscribtion.swift in Sources */,
 				FF85F84423859ACD005021CD /* Message.swift in Sources */,
 				FF85F84123859A7A005021CD /* IDataTrain.swift in Sources */,
+				FFA3AC9E2386F27E007C5141 /* Context.swift in Sources */,
 				FF85F85423859E27005021CD /* DataTrain.swift in Sources */,
+				FFA3AC9C2386F272007C5141 /* IContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

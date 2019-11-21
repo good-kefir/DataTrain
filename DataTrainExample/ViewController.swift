@@ -17,9 +17,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.dataTrain.connect(name: "topic").connect(queue: "queue").sendNow { () -> (AnyObject?) in
-            print("1")
-            return ["1", "2"] as AnyObject
+        self.dataTrain.connect(name: "topic").connect(queue: "queue").sendNow { (context) in
+            print("123")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                context.commit(data: ["1", "2"] as AnyObject)
+            }
+            
         }.subscribe { (message) in
             print(message)
         }

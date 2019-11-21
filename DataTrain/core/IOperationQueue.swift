@@ -14,12 +14,12 @@ public protocol IOperationQueue{
     var subscribtions:[ISubscribtion] { get }
     
     @discardableResult
-    func sendNow(operation:@escaping ()->(AnyObject?)) -> IOperationQueue
+    func sendNow(operation:@escaping (IContext)->()) -> IOperationQueue
     
-       
+    
     @discardableResult
     func sendDeadline(deadline: DispatchTime,
-                      operation:@escaping ()->(AnyObject?)) -> IOperationQueue
+                      operation:@escaping (IContext)->()) -> IOperationQueue
     
     @discardableResult
     func subscribe(main: @escaping (IMessage)->()) -> IOperationQueue

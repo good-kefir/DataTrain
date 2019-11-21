@@ -9,11 +9,15 @@
 import Foundation
 
 
-class OperationQueue : IOperationQueue{
-    
+class OperationQueue : IOperationQueue, IContextDelegate{
+   
     private var queue:DispatchQueue
     var name:String
     var subscribtions:[ISubscribtion]
+    
+    lazy var context:IContext = {
+        return Context(delegate: self)
+    }()
     
     required init(name:String,
                   queue:DispatchQueue){
@@ -24,23 +28,21 @@ class OperationQueue : IOperationQueue{
     }
     
     @discardableResult
-    func sendNow(operation:@escaping ()->(AnyObject?)) -> IOperationQueue{
+    func sendNow(operation:@escaping (IContext)->()) -> IOperationQueue{
         
         self.queue.async {
-            let data:AnyObject? = operation()
-            self.notifySubscribtions(data: data)
+            operation(self.context)
         }
         return self
     }
-    
+        
  
     @discardableResult
     func sendDeadline(deadline: DispatchTime,
-                      operation:@escaping ()->(AnyObject?)) -> IOperationQueue{
+                      operation:@escaping (IContext)->()) -> IOperationQueue{
         
         self.queue.asyncAfter(deadline: deadline) {
-            let data:AnyObject? = operation()
-            self.notifySubscribtions(data: data)
+            operation(self.context)
         }
         return self
     }
@@ -53,6 +55,11 @@ class OperationQueue : IOperationQueue{
             self.subscribtions.append(subscribtion)
         }
         return self
+    }
+    
+    //MARK: IContextDelegate
+    func didFinishOperation(data: AnyObject!) {
+        self.notifySubscribtions(data: data)
     }
     
     private func notifySubscribtions(data:AnyObject?){
