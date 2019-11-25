@@ -28,6 +28,7 @@
 		FF85F88C2385D3C5005021CD /* OperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF85F88B2385D3C5005021CD /* OperationQueue.swift */; };
 		FFA3AC9C2386F272007C5141 /* IContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3AC9B2386F272007C5141 /* IContext.swift */; };
 		FFA3AC9E2386F27E007C5141 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA3AC9D2386F27E007C5141 /* Context.swift */; };
+		FFA3ACA0238C60FE007C5141 /* DataTrain.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FFA3AC9F238C60FE007C5141 /* DataTrain.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		FF85F88B2385D3C5005021CD /* OperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationQueue.swift; sourceTree = "<group>"; };
 		FFA3AC9B2386F272007C5141 /* IContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IContext.swift; sourceTree = "<group>"; };
 		FFA3AC9D2386F27E007C5141 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		FFA3AC9F238C60FE007C5141 /* DataTrain.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DataTrain.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		FF85F81823859981005021CD = {
 			isa = PBXGroup;
 			children = (
+				FFA3AC9F238C60FE007C5141 /* DataTrain.podspec */,
 				FF85F82423859981005021CD /* DataTrain */,
 				FF85F82F23859981005021CD /* DataTrainTests */,
 				FF85F8722385A288005021CD /* DataTrainExample */,
@@ -281,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFA3ACA0238C60FE007C5141 /* DataTrain.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
