@@ -10,7 +10,7 @@ import Foundation
 
 
 class OperationQueue : IOperationQueue, IContextDelegate{
-   
+ 
     private var queue:DispatchQueue
     var name:String
     var subscribtions:[ISubscribtion]
@@ -25,6 +25,24 @@ class OperationQueue : IOperationQueue, IContextDelegate{
         self.name = name
         self.queue = queue
         self.subscribtions = []
+    }
+    
+    @discardableResult
+    func notify() -> IOperationQueue {
+         
+        self.queue.async {
+            self.notifySubscribtions(data: nil)
+        }
+        return self
+    }
+    
+    @discardableResult
+    func notifyDeadline(deadline: DispatchTime) -> IOperationQueue {
+      
+        self.queue.asyncAfter(deadline: deadline) {
+            self.notifySubscribtions(data: nil)
+        }
+        return self
     }
     
     @discardableResult

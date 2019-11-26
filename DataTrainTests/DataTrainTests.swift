@@ -115,6 +115,20 @@ class DataTrainTests: XCTestCase {
         
         wait(for: [expectation], timeout: 15)
     }
+    
+    func testNotify(){
+        
+        let topic = self.dataTrain.connect(name: "topic")
+        let queue = topic.connect(queue: "queue")
+        
+        queue.subscribe(id: self) { (message) in
+            print(message)
+        }.notify()
+        
+        queue.subscribe(id: self) { (message) in
+            print(message)
+        }.notifyDeadline(deadline: .now() + 2)
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.

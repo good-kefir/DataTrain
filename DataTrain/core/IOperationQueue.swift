@@ -14,6 +14,12 @@ public protocol IOperationQueue{
     var subscribtions:[ISubscribtion] { get }
     
     @discardableResult
+    func notify() -> IOperationQueue
+    
+    @discardableResult
+    func notifyDeadline(deadline: DispatchTime) -> IOperationQueue
+    
+    @discardableResult
     func sendNow(operation:@escaping (IContext)->()) -> IOperationQueue
     
     
