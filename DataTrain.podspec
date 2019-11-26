@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
 
 
-  s.name         = "Cocaine"
+  s.name         = "DataTrain"
   s.version      = "1.0.0"
   s.summary      = "DataTrain framework"
   s.description  = "DataTrain framework"
